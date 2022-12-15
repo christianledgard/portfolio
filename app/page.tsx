@@ -1,9 +1,36 @@
 import Image from "next/image";
 import christian from "../assets/images/christian.png";
-import { Inter } from "@next/font/google";
-import styles from "./page.module.css";
-import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+} from "react-icons/fa";
+import Link from "next/link";
 
+const carrusel = (
+  <div className="group relative border-2 border-black rounded-md">
+    <div className="min-h-80 aspect-w-1 aspect-h-1 w-full h-40 overflow-hidden bg-pink rounded-t-sm border-b-2 border-black" />
+    <div className="flex justify-between">
+      <div className="p-4">
+        <h3 className="text-lg font-bold text-black">
+          Appointment software for a psychology center
+        </h3>
+        <p className="mt-2 text-sm text-gray-700">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et
+          bibendum tortor. Nullam cursus vel lacus a vulputate. Quisque
+          condimentum lorem et.
+        </p>
+        <Link href={"#"}>
+          <div className="flex space-x-1 mt-4">
+            <p className="text-sm font-medium text-black ">Read more</p>
+            <FaArrowRight className="items-stretch" />
+          </div>
+        </Link>
+      </div>
+    </div>
+  </div>
+);
 export default function Home() {
   return (
     <>
@@ -18,25 +45,24 @@ export default function Home() {
                 Passionate about computers and emerging technologies. Love
                 building software. Computer Science at VU, Amsterdam.
               </p>
-              <button className="bg-black text-white py-2 px-4">
+              <Link
+                href={"/#projects"}
+                className="bg-black text-white py-2 px-4"
+              >
                 view projects
-              </button>
+              </Link>
             </div>
           </div>
           <div className="bg-yellow">
             <div className="flex justify-center">
               <div className="m-16 max-w-md">
-                <Image
-                  src={christian}
-                  alt="Picture of the author"
-                  className=""
-                />
+                <Image src={christian} alt="Picture of the author" priority />
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section>
+      <section id="about-me">
         <div className="w-full border-2 border-black" />
         <div className="flex flex-col items-center py-20 space-y-2">
           <h1 className="text-2xl">About Me</h1>
@@ -60,37 +86,19 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section>
+      <section id="projects">
         <div className="w-full border-2 border-black" />
-        <div className="flex flex-col py-20 space-y-2">
-          <h1 className="font-bold text-center text-5xl md:text-6xl">
-            My Projects
-          </h1>
-          <h2 className="text-2xl text-center p-4">front-end, back-end</h2>
-
-          <div className="grid grid-cols-3 gap-4 max-w-4xl px-8">
-            <div className="group relative">
-              <div className="min-h-80 aspect-w-1 aspect-h-1 w-full h-40 overflow-hidden rounded-md bg-gray-200" />
-              <div className="mt-4 flex justify-between">
-                <div>
-                  <h3 className="text-sm text-gray-700">
-                    <a href="#">
-                      <span
-                        aria-hidden="true"
-                        className="absolute inset-0"
-                      ></span>
-                      Basic Tee
-                    </a>
-                  </h3>
-                  <p className="mt-1 text-sm text-gray-500">Black</p>
-                </div>
-                <p className="text-sm font-medium text-gray-900">$35</p>
-              </div>
-            </div>
+        <div className="flex flex-col justify-center items-center py-20 space-y-2">
+          <h1 className="font-bold text-5xl md:text-6xl">My Projects</h1>
+          <h2 className="text-2xl p-4 pb-8">front-end, back-end</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-10 gap-x-6 xl:gap-x-8 max-w-4xl px-8">
+            {carrusel}
+            {carrusel}
+            {carrusel}
           </div>
         </div>
       </section>
-      <section>
+      <section id="contact">
         <div className="flex flex-col p-8  space-y-8 bg-black">
           <div className="m-[2vw] space-y-7">
             <h1 className="font-bold text-white text-5xl ">Contact</h1>

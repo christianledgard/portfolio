@@ -31,13 +31,13 @@ export default function RootLayout({
           <div className="w-full border-2 border-black" />
           <div className="flex justify-between h-12">
             <div className="flex items-center">
-              <Link href="/" className="px-4">
+              <Link href="#about-me" className="px-4" scroll>
                 about me
               </Link>
-              <Link href="/" className="px-4">
+              <Link href="#projects" className="px-4">
                 projects
               </Link>
-              <Link href="/" className="px-4">
+              <Link href="#contact" className="px-4">
                 contact
               </Link>
             </div>

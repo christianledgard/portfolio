@@ -25,6 +25,7 @@ module.exports = {
       indigo: colors.indigo,
       yellow: "#FCE300",
       purple: "#AD96DC",
+      pink: "#F52789",
     },
   },
   plugins: [],
