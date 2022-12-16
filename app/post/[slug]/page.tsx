@@ -48,12 +48,21 @@ export default async function Post({ params: { slug } }: any) {
   const post = await postData;
 
   return (
-    <div className="mx-auto w-[92vw] max-w-7xl lg:max-w-3xl	px-4 py-8">
-      <article className="prose max-w-none">
-        <h1>{post.title}</h1>
-        {/* <span>By {post.name}</span> */}
-        <PortableText value={post.body} components={ptComponents} />
-      </article>
-    </div>
+    <>
+      <section>
+        <div className="flex flex-col items-center py-12  bg-yellow">
+          <h1 className="font-bold text-center text-5xl md:text-6xl p-4">
+            {post.title}
+          </h1>
+        </div>
+        <div id="about-me" className="w-full border-2 border-black" />
+      </section>
+      <div className="mx-auto w-[92vw] max-w-7xl lg:max-w-3xl	px-4 py-8 ">
+        <article className="prose max-w-none">
+          {/* <span>By {post.name}</span> */}
+          <PortableText value={post.body} components={ptComponents} />
+        </article>
+      </div>
+    </>
   );
 }
