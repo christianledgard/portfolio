@@ -1,7 +1,6 @@
 import "./globals.css";
 import title from "../assets/images/title.svg";
 import Image from "next/image";
-import Link from "next/link";
 import { Roboto } from "@next/font/google";
 
 const roboto = Roboto({
@@ -16,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head />
       <body className={roboto.className}>
         <nav>
@@ -31,21 +30,22 @@ export default function RootLayout({
           <div className="w-full border-2 border-black" />
           <div className="flex justify-between h-12">
             <div className="flex items-center">
-              <Link href="#about-me" className="px-4" scroll>
+              <a href="#about-me" className="px-4">
                 about me
-              </Link>
-              <Link href="#projects" className="px-4">
+              </a>
+              <a href="#projects" className="px-4">
                 projects
-              </Link>
-              <Link href="#contact" className="px-4">
+              </a>
+              <a href="#contact" className="px-4">
                 contact
-              </Link>
+              </a>
             </div>
-            <div>
-              <button className="inline-block w-auto px-8 h-full bg-black text-white">
-                send me an email
-              </button>
-            </div>
+            <a
+              className="inline-block w-auto px-8 h-full bg-black text-white content-end"
+              href="mailto:christianledgard@gmail.com"
+            >
+              <span className="flex items-center h-full">send me an email</span>
+            </a>
           </div>
           <div className="w-full border-2 border-black" />
         </nav>

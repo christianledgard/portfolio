@@ -45,12 +45,14 @@ export default function Home() {
                 Passionate about computers and emerging technologies. Love
                 building software. Computer Science at VU, Amsterdam.
               </p>
-              <Link
-                href={"/#projects"}
-                className="bg-black text-white py-2 px-4"
-              >
-                view projects
-              </Link>
+              <div className="flex">
+                <a
+                  href="#projects"
+                  className="ml-auto bg-black text-white py-4 px-6 rounded-sm border-black border-2 transition ease-in-out delay-100 hover:-translate-x-3 hover:-translate-y-3 hover:bg-pink  hover:text-black"
+                >
+                  view projects
+                </a>
+              </div>
             </div>
           </div>
           <div className="bg-yellow">
@@ -62,8 +64,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="about-me">
-        <div className="w-full border-2 border-black" />
+      <section>
+        <div id="about-me" className="w-full border-2 border-black" />
         <div className="flex flex-col items-center py-20 space-y-2">
           <h1 className="text-2xl">About Me</h1>
           <h2 className="font-bold text-center text-5xl md:text-6xl p-4">
