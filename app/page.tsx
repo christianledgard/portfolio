@@ -1,37 +1,20 @@
 import Image from "next/image";
 import christian from "../assets/images/christian.png";
-import {
-  FaArrowRight,
-  FaInstagram,
-  FaLinkedin,
-  FaTwitter,
-} from "react-icons/fa";
-import Link from "next/link";
+import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import CarruselCard from "../components/CarruselCard";
+import client from "../client";
+import groq from "groq";
 
-const carrusel = (
-  <div className="group relative border-2 border-black rounded-md">
-    <div className="min-h-80 aspect-w-1 aspect-h-1 w-full h-40 overflow-hidden bg-pink rounded-t-sm border-b-2 border-black" />
-    <div className="flex justify-between">
-      <div className="p-4">
-        <h3 className="text-lg font-bold text-black">
-          Appointment software for a psychology center
-        </h3>
-        <p className="mt-2 text-sm text-gray-700">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et
-          bibendum tortor. Nullam cursus vel lacus a vulputate. Quisque
-          condimentum lorem et.
-        </p>
-        <Link href={"#"}>
-          <div className="flex space-x-1 mt-4">
-            <p className="text-sm font-medium text-black ">Read more</p>
-            <FaArrowRight className="items-stretch" />
-          </div>
-        </Link>
-      </div>
-    </div>
-  </div>
-);
-export default function Home() {
+async function getPosts() {
+  const posts = await client.fetch(groq`
+      *[_type == "post"]{_id, title, _createdAt, description, slug} | order(_createdAt desc)
+    `);
+  return posts;
+}
+
+export default async function Home() {
+  const postsData = getPosts();
+  const posts = await postsData;
   return (
     <>
       <section>
@@ -94,9 +77,18 @@ export default function Home() {
           <h1 className="font-bold text-5xl md:text-6xl">My Projects</h1>
           <h2 className="text-2xl p-4 pb-8">front-end, back-end</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-10 gap-x-6 xl:gap-x-8 max-w-4xl px-8">
-            {carrusel}
-            {carrusel}
-            {carrusel}
+            {posts.length > 0 &&
+              posts.map(
+                ({ _id, title = "", description = "", slug = "" }: any) =>
+                  slug && (
+                    <CarruselCard
+                      key={_id}
+                      title={title}
+                      description={description}
+                      slug={slug.current}
+                    />
+                  )
+              )}
           </div>
         </div>
       </section>
@@ -106,7 +98,7 @@ export default function Home() {
             <h1 className="font-bold text-white text-5xl ">Contact</h1>
             <div className="flex justify-between flex-col md:flex-row space-y-5 md:space-y-0">
               <div className="flex items-center">
-                <p className="text-white text-3xl">
+                <p className="text-white text-xl sm:text-3xl">
                   christianledgard@gmail.com
                 </p>
               </div>
