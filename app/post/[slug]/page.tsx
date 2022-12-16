@@ -26,18 +26,14 @@ const ptComponents = {
         return null;
       }
       return (
-        <Image
-          alt={value.alt || " "}
-          loading="lazy"
-          src={urlFor(value)
-            .width(320)
-            .height(240)
-            .fit("max")
-            .auto("format")
-            .url()}
-          width={320}
-          height={240}
-        />
+        <div className="p-2">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            alt={value.alt || " "}
+            src={urlFor(value).fit("max").auto("format").url()}
+            loading="lazy"
+          />
+        </div>
       );
     },
   },
