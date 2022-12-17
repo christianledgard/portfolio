@@ -28,7 +28,7 @@ const BlogImages = (props: any) => {
         />
       )}
       <div
-        className="p-2"
+        className="p-2 cursor-zoom-in"
         onClick={() => {
           setLightboxImageSrc(url);
         }}
