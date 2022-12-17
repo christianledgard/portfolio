@@ -1,9 +1,7 @@
-import { useRouter } from "next/navigation";
 import client from "../../../client";
 import { PortableText } from "@portabletext/react";
-import imageUrlBuilder from "@sanity/image-url";
-import Image from "next/image";
 import groq from "groq";
+import BlogImages from "../../../components/BlogImages";
 
 async function getPost(slug: string) {
   const post = await client.fetch(
@@ -15,26 +13,13 @@ async function getPost(slug: string) {
   return post;
 }
 
-function urlFor(source: any) {
-  return imageUrlBuilder(client).image(source);
-}
-
 const ptComponents = {
   types: {
     image: ({ value }: any) => {
       if (!value?.asset?._ref) {
         return null;
       }
-      return (
-        <div className="p-2">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            alt={value.alt || " "}
-            src={urlFor(value).fit("max").auto("format").url()}
-            loading="lazy"
-          />
-        </div>
-      );
+      return <BlogImages value={value} />;
     },
   },
 };
