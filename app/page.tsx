@@ -8,7 +8,7 @@ import groq from "groq";
 async function getPosts() {
   const posts = await client.fetch(
     groq`
-      *[_type == "post"]{_id, title, publishedAt, _createdAt, description, slug} | order(publishedAt desc)
+      *[_type == "post"]{_id, title, publishedAt, _createdAt, description, slug} | order(publishedAt asc)
     `,
     { cache: "no-store" }
   );
