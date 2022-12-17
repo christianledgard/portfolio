@@ -6,9 +6,12 @@ import client from "../client";
 import groq from "groq";
 
 async function getPosts() {
-  const posts = await client.fetch(groq`
+  const posts = await client.fetch(
+    groq`
       *[_type == "post"]{_id, title, _createdAt, description, slug} | order(_createdAt desc)
-    `);
+    `,
+    { cache: "no-store" }
+  );
   return posts;
 }
 
