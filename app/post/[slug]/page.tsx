@@ -2,6 +2,7 @@ import client from "../../../client";
 import { PortableText } from "@portabletext/react";
 import groq from "groq";
 import BlogImages from "../../../components/BlogImages";
+import ScrollUp from "../../../components/utils/ScrollUp";
 
 async function getPost(slug: string) {
   const post = await client.fetch(
@@ -30,6 +31,7 @@ export default async function Post({ params: { slug } }: any) {
 
   return (
     <>
+      <ScrollUp />
       <section>
         <div className="flex flex-col items-center py-12  bg-yellow">
           <h1 className="font-bold text-center text-5xl md:text-6xl p-4">

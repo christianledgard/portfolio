@@ -10,7 +10,7 @@ const roboto = Roboto({
 
 export default function RootLayout(props: any) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <head />
       <body className={roboto.className}>
         <Layout {...props} />
