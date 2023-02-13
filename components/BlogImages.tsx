@@ -34,7 +34,12 @@ const BlogImages = (props: any) => {
         }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img alt={props.value.alt || " "} src={url} loading="lazy" />
+        <img
+          alt={props.value.alt || " "}
+          src={url}
+          loading="lazy"
+          className="m-0"
+        />
       </div>
     </>
   );
