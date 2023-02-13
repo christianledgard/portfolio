@@ -13,12 +13,23 @@ async function getPost(slug: string) {
 
 export default async function Head({ params }: any) {
   const post = await getPost(params.slug);
-  const title = `${post.title} | Christian Ledgard`;
+  const title = post
+    ? `${post.title} | Christian Ledgard`
+    : "post not found :(";
+
+  if (post)
+    return (
+      <>
+        <title>{title}</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta name="description" content={post.description} />
+      </>
+    );
+
   return (
     <>
       <title>{title}</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
-      <meta name="description" content={post.description} />
     </>
   );
 }
