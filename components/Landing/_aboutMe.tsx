@@ -11,17 +11,20 @@ const AboutMe = () => {
         </h2>
         <div className="text-lg max-w-4xl space-y-4 px-8">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-            ipsum turpis, venenatis eu tincidunt sit amet, varius quis nibh.
-            Nunc blandit vel enim quis tincidunt. Ut at diam in nulla
-            consectetur condimentum.
+            Hello! I&apos;m a computer scientist who&apos;s passionate about
+            building software systems that can have a real impact on
+            people&apos;s lives. Through various real-world projects and
+            successful freelance work, such as with the Research Institute for
+            Development and Psicotrec, I&apos;ve gained valuable experience that
+            allowed me to develop my skills.
           </p>
           <p>
-            Cras congue ex et felis rutrum, et feugiat dolor tempus. Mauris
-            libero lectus, fringilla id convallis a, pulvinar sed quam. Sed sem
-            eros, interdum et commodo in, tincidunt vitae nisi. Curabitur sed
-            gravida nisi. Pellentesque finibus massa in lacus sollicitudin
-            aliquet. Mauris tempor risus ac mollis volutpat.
+            I am particularly interested in quality assurance, continuous
+            integration, cloud computing, and software construction. I&apos;m
+            always looking for new opportunities to learn and grow, and excited
+            to collaborate with passionate teams to develop innovative
+            solutions. Based in Amsterdam, I&apos;m eager to develop my skills
+            further and experience new challenges.
           </p>
         </div>
       </div>
