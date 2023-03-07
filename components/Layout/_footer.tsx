@@ -28,6 +28,9 @@ const Footer = () => {
               </Link>
             </div>
           </div>
+          <p className="text-white  text-xs italic">
+            This neo brutalist web design is inspired by Gumroad!
+          </p>
         </div>
       </div>
     </section>
