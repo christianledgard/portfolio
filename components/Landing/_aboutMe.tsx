@@ -3,7 +3,7 @@ import React from "react";
 const AboutMe = () => {
   return (
     <section>
-      <div id="about-me" className="w-full border-2 border-black" />
+      <div id="about-me" className="w-full border-b-[2px] border-black" />
       <div className="flex flex-col items-center py-20 space-y-2">
         <h1 className="text-2xl">About Me</h1>
         <h2 className="font-bold text-center text-5xl md:text-6xl p-4">

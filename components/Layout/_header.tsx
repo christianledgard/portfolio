@@ -13,7 +13,7 @@ const Header = () => {
           priority
         />
       </div>
-      <div className="w-full border-2 border-black" />
+      <div className="w-full border-t-[2px] border-black" />
       <div className="flex justify-between h-12">
         <div className="flex items-center">
           <a href="/#about-me" className="px-4">
@@ -33,7 +33,7 @@ const Header = () => {
           <span className="flex items-center h-full">send me an email</span>
         </a>
       </div>
-      <div className="w-full border-2 border-black" />
+      <div className="w-full border-t-[2px] border-black" />
     </nav>
   );
 };

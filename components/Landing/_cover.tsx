@@ -6,7 +6,7 @@ const Cover = () => {
   return (
     <section>
       <div className="grid sm:grid-cols-2">
-        <div className="border-b-4 sm:border-b-0 sm:border-r-4  border-black p-8 bg-purple">
+        <div className="border-b-[2px] sm:border-b-0 sm:border-r-[2px]  border-black p-8 bg-purple">
           <div className="m-[2vw] lg:m-[6vw]">
             <h1 className="font-bold text-5xl md:text-6xl">
               Software Developer
@@ -18,7 +18,7 @@ const Cover = () => {
             <div className="flex">
               <a
                 href="#projects"
-                className="ml-auto bg-black text-white py-4 px-6 rounded-sm border-black border-2 transition ease-in-out delay-100 hover:-translate-x-2 hover:-translate-y-2 hover:bg-pink  hover:text-black"
+                className="ml-auto bg-black text-white py-4 px-6 rounded-sm border-black border-2 transition ease-in-out delay-100 hover:bg-yellow hover:scale-110  hover:text-black"
               >
                 view projects
               </a>
