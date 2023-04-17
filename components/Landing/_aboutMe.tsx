@@ -7,7 +7,7 @@ const AboutMe = () => {
       <div className="flex flex-col items-center py-20 space-y-2">
         <h1 className="text-2xl">About Me</h1>
         <h2 className="font-bold text-center text-5xl md:text-6xl p-4">
-          From Lima to Amsteram
+          From Lima to Amsterdam
         </h2>
         <div className="text-lg max-w-4xl space-y-4 px-8">
           <p>
