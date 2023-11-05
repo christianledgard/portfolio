@@ -42,19 +42,23 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const postData = getPostMetadata(slug || "");
   const post = await postData;
-  return {
-    metadataBase: new URL("https://christian.ledgard.com"),
-    title: post.title,
-    description: post.description,
-    openGraph: {
+  if (post)
+    return {
+      metadataBase: new URL("https://christian.ledgard.com"),
       title: post.title,
       description: post.description,
-      images: [
-        {
-          url: post.mainImage,
-        },
-      ],
-    },
+      openGraph: {
+        title: post.title,
+        description: post.description,
+        images: [
+          {
+            url: post.mainImage,
+          },
+        ],
+      },
+    };
+  return {
+    title: "404: No posts found with the specified URL.",
   };
 }
 
@@ -71,7 +75,7 @@ export default async function Post({ params: { slug } }: any) {
             {post.title}
           </h1>
         </div>
-        <article className="prose dark:prose-invert prose-h1:mt-16 prose-h1:mb-0">
+        <article className="prose dark:prose-invert prose-h1:mt-10 prose-h1:mb-0">
           <PortableText value={post.body} components={ptComponents} />
         </article>
       </>
