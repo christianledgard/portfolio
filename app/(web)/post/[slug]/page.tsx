@@ -3,11 +3,22 @@ import { PortableText } from "@portabletext/react";
 import groq from "groq";
 import BlogImages from "../../../../components/BlogImages";
 import ScrollUp from "../../../../components/utils/ScrollUp";
+import type { Metadata, ResolvingMetadata } from "next";
 
 async function getPost(slug: string) {
   const post = await client.fetch(
     groq`
     *[_type == "post" && slug.current == $slug][0]{title, "name": author->name, body}
+  `,
+    { slug }
+  );
+  return post;
+}
+
+async function getPostMetadata(slug: string) {
+  const post = await client.fetch(
+    groq`
+    *[_type == "post" && slug.current == $slug][0]{title, description}
   `,
     { slug }
   );
@@ -24,6 +35,18 @@ const ptComponents = {
     },
   },
 };
+
+export async function generateMetadata(
+  { params: { slug } }: any,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const postData = getPostMetadata(slug || "");
+  const post = await postData;
+  return {
+    title: post.title,
+    description: post.description,
+  };
+}
 
 export default async function Post({ params: { slug } }: any) {
   const postData = getPost(slug || "");
