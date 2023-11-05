@@ -1,16 +1,14 @@
 import React from "react";
 import Projects from "./Projects/Projects";
-import AboutMe from "./_aboutMe";
 
 import Cover from "./_cover";
 
 const Landing = (props: any) => {
   return (
-    <>
+    <div className="space-y-10">
       <Cover />
-      <AboutMe />
       <Projects {...props} />
-    </>
+    </div>
   );
 };
 

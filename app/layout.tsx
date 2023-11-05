@@ -1,18 +1,12 @@
 import "./globals.css";
-import { Roboto } from "@next/font/google";
 import Layout from "../components/Layout/Layout";
-
-const roboto = Roboto({
-  style: ["normal", "italic"],
-  weight: ["100", "300", "400", "500", "700", "900"],
-  variable: "--font-roboto",
-});
+import { GeistSans } from "geist/font";
 
 export default function RootLayout(props: any) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`scroll-smooth dark`}>
       <head />
-      <body className={roboto.className}>
+      <body className={`${GeistSans.className} dark:bg-mygray dark:text-white`}>
         <Layout {...props} />
       </body>
     </html>

@@ -8,16 +8,17 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {
+  darkMode: "class",
+  variants: {
     extend: {
-      fontFamily: {
-        sans: ["var(--font-roboto)", ...fontFamily.sans],
-        serif: ["var(--font-roboto)", ...fontFamily.serif],
-      },
+      textOpacity: ["dark"],
     },
+  },
+  theme: {
     colors: {
       transparent: "transparent",
       current: "currentColor",
+      mygray: "#1C1C1C",
       black: colors.black,
       white: colors.white,
       gray: colors.gray,
