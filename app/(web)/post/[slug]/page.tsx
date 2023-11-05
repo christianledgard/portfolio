@@ -18,7 +18,7 @@ async function getPost(slug: string) {
 async function getPostMetadata(slug: string) {
   const post = await client.fetch(
     groq`
-    *[_type == "post" && slug.current == $slug][0]{title, description}
+    *[_type == "post" && slug.current == $slug][0]{title, description, "mainImage": mainImage.asset->url}
   `,
     { slug }
   );
@@ -43,8 +43,18 @@ export async function generateMetadata(
   const postData = getPostMetadata(slug || "");
   const post = await postData;
   return {
+    metadataBase: new URL("https://christian.ledgard.com"),
     title: post.title,
     description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      images: [
+        {
+          url: post.mainImage,
+        },
+      ],
+    },
   };
 }
 

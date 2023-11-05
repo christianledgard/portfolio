@@ -13,9 +13,8 @@ export const metadata: Metadata = {
 async function getPosts() {
   const posts = await client.fetch(
     groq`
-      *[_type == "post"]{_id, title, publishedAt, _createdAt, description, slug} | order(publishedAt asc)
-    `,
-    { cache: "no-store" }
+      *[_type == "post"]{_id, title, publishedAt, _createdAt, description, slug} | order(publishedAt desc)
+    `
   );
   return posts;
 }
