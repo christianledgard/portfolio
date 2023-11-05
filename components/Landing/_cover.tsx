@@ -35,7 +35,7 @@ const Cover = () => {
             {` as a Software Quality Assurance Intern. My enthusiasm for
             sustainable energy and the opportunity to collaborate with an
             exceptional team aligns perfectly with my eagerness to learn and
-            grow. In addition, I am also the proud founder of `}
+            grow. In addition, I am also the proud co-founder of `}
             <a
               className=" whitespace-nowrap text-white border dark:border-neutral-700 rounded p-1 mx-1 text-sm no-underline bg-[#3c3c3c] "
               href="https://www.atlastechhub.com/"
