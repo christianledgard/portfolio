@@ -1,6 +1,6 @@
-import client from "../client";
+import client from "../../client";
 import groq from "groq";
-import Landing from "../components/Landing/Landing";
+import Landing from "../../components/Landing/Landing";
 
 async function getPosts() {
   const posts = await client.fetch(

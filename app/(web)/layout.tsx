@@ -1,5 +1,5 @@
 import "./globals.css";
-import Layout from "../components/Layout/Layout";
+import Layout from "../../components/Layout/Layout";
 import { GeistSans } from "geist/font";
 
 export default function RootLayout(props: any) {

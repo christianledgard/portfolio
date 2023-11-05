@@ -1,8 +1,8 @@
-import client from "../../../client";
+import client from "../../../../client";
 import { PortableText } from "@portabletext/react";
 import groq from "groq";
-import BlogImages from "../../../components/BlogImages";
-import ScrollUp from "../../../components/utils/ScrollUp";
+import BlogImages from "../../../../components/BlogImages";
+import ScrollUp from "../../../../components/utils/ScrollUp";
 
 async function getPost(slug: string) {
   const post = await client.fetch(
