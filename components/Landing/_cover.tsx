@@ -32,7 +32,7 @@ const Cover = () => {
               />
               <span>Tesla</span>
             </a>
-            {` as a Software Quality Assurance Intern. My enthusiasm for
+            {` as a Software Quality Assurance Associate. My enthusiasm for
             sustainable energy and the opportunity to collaborate with an
             exceptional team aligns perfectly with my eagerness to learn and
             grow. In addition, I am also the proud co-founder of `}

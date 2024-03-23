@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Christian Ledgard | Software Engineer",
   description:
-    "Software Quality Assurance Intern @ TESLA, Founder @ ATLAS. I am a passionate computer scientist driven by the desire to create software systems that genuinely impact people's lives.",
+    "Software Quality Assurance @ TESLA, Founder @ ATLAS. I am a passionate computer scientist driven by the desire to create software systems that genuinely impact people's lives.",
 };
 
 async function getPosts() {
